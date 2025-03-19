@@ -1,5 +1,33 @@
-# Vue 3 + TypeScript + Vite
+OMM4 Assignemt 2
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+s2210238022 Dennis Hanrieder
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+AI-Prombt: entries currently only display the first name 
+AI-Response: 
+
+Gotcha! From the UI screenshot, looks like only the firstname is showing after -- (you probably expected both firstname + lastname + maybe birthday).
+
+🔍 Issue Source:
+Looking back at your MyLi.vue:
+
+vue
+Kopieren
+Bearbeiten
+<span class="view" @dblclick="editMe">{{ firstname, lastname, birthday }}</span>
+The issue here is:
+
+Vue will just render birthday inside {{ }} if you use commas like that.
+Vue templates don't "automatically" handle destructuring style firstname, lastname, birthday rendering.
+✅ Fix:
+You should concatenate them like a string:
+
+vue
+Kopieren
+Bearbeiten
+<span class="view" @dblclick="editMe">{{ firstname }} {{ lastname }} -- {{ birthday }}</span>
+Or if you want a more formatted birthday:
+
+vue
+Kopieren
+Bearbeiten
+<span class="view" @dblclick="editMe">{{ firstname }} {{ lastname }} -- {{ birthday.toLocaleDateString() }}</span>
