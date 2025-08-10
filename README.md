@@ -25,7 +25,7 @@ This project showcases:
 ## Quick start (clone & run)
 ```bash
 # 1) Clone the repository
-git clone <YOUR_REPO_URL>
+git clone <https://github.com/DennisNHanrieder/onm2.git>
 cd onm2-main/onm2-main
 
 # 2) Install dependencies
@@ -84,6 +84,3 @@ For component testing, consider **Cypress Component Testing** or **Playwright** 
 - **Vite** — Fast dev server and optimized production builds.
 - **HTML5 form & events** — For capturing input, validation, and UX feedback.
 
----
-
-_Replace `<YOUR_REPO_URL>` with the actual repository URL before sharing. This README is designed to be recruiter-friendly, emphasizing the app’s purpose, feature set, and the engineering choices behind it._
